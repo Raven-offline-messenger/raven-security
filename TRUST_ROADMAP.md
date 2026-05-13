@@ -34,7 +34,7 @@ honest comparison to existing systems, and explicit limitations.
 
 ## Stage 2 — Public threat model
 
-**Status:** 🔄 In progress (May 2026)
+**Status:** ✅ Complete (May 2026)
 
 We document, in this repository:
 
@@ -49,6 +49,8 @@ We document, in this repository:
   acknowledgement.
 - [`SECURITY_CLAIMS.md`](SECURITY_CLAIMS.md) has a per-layer table
   matching the product user interface.
+
+Both criteria are met as of May 2026.
 
 **Artifacts:**
 - [`THREAT_MODEL.md`](THREAT_MODEL.md)

@@ -23,6 +23,8 @@ Last updated: **2026-05-13**
 | 4. Encrypted Mesh Routing | ✅ Complete | ✅ Stage 5 shipped (iOS) | ⏳ Planned | ⏳ Planned | ⏳ Planned |
 | 5. Vault Mode (PV-RAW) | ✅ Complete | ✅ Storage + emit/decrypt shipped (iOS) | ⏳ Planned | ⏳ Planned | ⏳ Planned |
 | 5b. Wegman-Carter MAC | ✅ Complete | ✅ Shipped with Vault Mode (iOS) | ⏳ Planned | ⏳ Planned | ⏳ Planned |
+| 5c. PV-Stealth (rotating lookup tags) | ✅ Complete | ✅ Stage 9 shipped (iOS) | ⏳ Planned | ⏳ Planned | ⏳ Planned |
+| 5d. UI policy (security badges + pad-usage warnings) | ✅ Complete | ✅ Stage 10 shipped (iOS) | — | — | — |
 | 6. Distance bounding | 🔬 Research | — | — | — | — |
 | 7. Cover traffic | 🔬 Research | — | — | — | — |
 
@@ -43,7 +45,7 @@ Mirrors [`TRUST_ROADMAP.md`](TRUST_ROADMAP.md).
 | Stage | What | Status |
 | --- | --- | --- |
 | 1 | Public security overview | ✅ Complete (May 2026) |
-| 2 | Public threat model | 🔄 In progress (this repository, May 2026) |
+| 2 | Public threat model | ✅ Complete (May 2026) |
 | 3 | Open cryptographic test vectors | ⏳ Planned, Q3 2026 |
 | 4 | Open cryptographic reference implementation (`raven-crypto-core`) | ⏳ Planned, Q4 2026 |
 | 5 | Independent third-party audit | ⏳ Planned, 2027 H1 |
