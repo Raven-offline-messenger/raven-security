@@ -10,9 +10,34 @@ earn trust through public documentation, clear threat models, open
 cryptographic components, independent audits, and security-community
 review.
 
-**This repository does not contain the full Raven application source
-code or production infrastructure.** It contains public security
-material intended for review, transparency, and collaboration.
+## How this repository fits with the rest of Raven
+
+Raven is **already open source**. The full application source code,
+including the iOS / Mac client, the server, and the BLE mesh stack,
+lives at:
+
+➡️ **[`Raven-offline-messenger/RAVEN`](https://github.com/Raven-offline-messenger/RAVEN)**
+&mdash; licensed under AGPL-3.0.
+
+That repository contains the actual code that runs on users' devices.
+
+**This** repository (`raven-security`) is the *documentation* side of
+Raven's trust posture. It is intentionally smaller and more focused
+than the main repo:
+
+- **`Raven-offline-messenger/RAVEN`** &mdash; the running code (AGPL-3.0).
+- **`Raven-offline-messenger/raven-security`** &mdash; threat model,
+  per-layer security claims, trust roadmap, responsible disclosure,
+  test vector scaffolding, ATSAM public overview (CC-BY-4.0).
+
+A security researcher who wants to *audit Raven's actual binary* should
+start at the main repo. A researcher who wants to understand *what
+Raven claims to defend and what it doesn't* should start here.
+
+A planned third repository, **`raven-crypto-core`**, will host a
+clean-room cryptographic reference implementation of the ATSAM
+primitives, separate from the full app. See
+[`TRUST_ROADMAP.md`](TRUST_ROADMAP.md) Stage 4.
 
 ---
 

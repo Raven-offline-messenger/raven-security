@@ -91,11 +91,15 @@ verify behaviour without needing the full Raven app.
 
 **Status:** 📅 Planned (target: Q4 2026)
 
-We plan to open-source a minimal cryptographic reference
-implementation in a separate repository, `raven-crypto-core`. It
-will deliberately be **smaller than the Raven app** — only the
-ATSAM crypto primitives, with the test vectors above as its
-self-test suite.
+The full Raven application source is already public under AGPL-3.0
+at [`Raven-offline-messenger/RAVEN`](https://github.com/Raven-offline-messenger/RAVEN).
+A reviewer can already audit the actual code that runs on devices.
+
+What Stage 4 adds is a separate, **smaller and focused** reference
+implementation at `raven-crypto-core`. The goal is to make the
+cryptographic core easier to audit on its own, without the UI,
+networking, storage, and product code that surrounds it in the
+production app.
 
 Scope of `raven-crypto-core`:
 
@@ -107,6 +111,7 @@ Scope of `raven-crypto-core`:
 - Live confirmation challenge-response.
 
 **Done when:**
+- `raven-crypto-core` repository exists on GitHub.
 - The reference implementation passes every test vector in
   this repository.
 - The reference implementation has its own SECURITY.md +
@@ -116,6 +121,11 @@ Scope of `raven-crypto-core`:
 
 **Language preference:** Rust first (better audit reach +
 cross-platform reuse), Swift second (Raven is iOS-first).
+
+Note: this is *additional* transparency on top of what the
+main Raven repository already provides under AGPL-3.0. It is
+not a "first time opening anything" — it is a "smaller surface
+the security community can review in isolation".
 
 ---
 
