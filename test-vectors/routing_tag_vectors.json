@@ -1,0 +1,22 @@
+{
+  "name": "Ghost Route per-message recipient tag",
+  "spec": "ATSAM Public Overview §3.4",
+  "status": "placeholder",
+  "deterministic": true,
+  "inputs_are_fake_test_material": true,
+  "schema_version": 1,
+  "description": "Placeholder file. Will publish (K_route, message_nonce) -> recipient_tag for several inputs, including one that demonstrates unlinkability across two different nonces.",
+  "vectors": [
+    {
+      "id": "route-tag-001",
+      "comment": "placeholder; expected tag is Trunc_128(HMAC(K_route, label || nonce))",
+      "input": {
+        "K_route_hex": "TODO",
+        "message_nonce_hex": "TODO"
+      },
+      "expected": {
+        "recipient_tag_hex": "TODO"
+      }
+    }
+  ]
+}

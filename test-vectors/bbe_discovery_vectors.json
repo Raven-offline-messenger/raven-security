@@ -1,0 +1,23 @@
+{
+  "name": "BBE discovery slot derivation",
+  "spec": "ATSAM Public Overview §3.2",
+  "status": "placeholder",
+  "deterministic": true,
+  "inputs_are_fake_test_material": true,
+  "schema_version": 1,
+  "description": "Placeholder file for BBE slot derivation vectors. Real values land in Trust Roadmap stage 3.",
+  "vectors": [
+    {
+      "id": "bbe-slot-001",
+      "comment": "placeholder; will publish (K_BBE, epoch, nonce) -> slot for several test triples",
+      "input": {
+        "K_BBE_hex": "TODO",
+        "epoch": 0,
+        "nonce_hex": "TODO"
+      },
+      "expected": {
+        "slot_hex": "TODO"
+      }
+    }
+  ]
+}

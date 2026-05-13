@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Build artefacts (we don't build anything in this repo, but
+# guard rails in case future tooling lands here)
+node_modules/
+dist/
+build/
+
+# Don't ever commit production secrets or local notes that would
+# leak internal architecture details. If a file matches one of
+# these and you genuinely want it in the repo, rename it first.
+*.key
+*.pem
+*.p12
+*.p8
+*.env
+.env.*
+secrets/
+internal_notes/
+internal/
+production/
+
+# Local scratch
+scratch/
+TODO.local.md
+notes-private/

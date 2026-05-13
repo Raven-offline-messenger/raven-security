@@ -1,0 +1,23 @@
+{
+  "name": "ATSAM pairing root derivation",
+  "spec": "ATSAM Public Overview §3.1",
+  "status": "placeholder",
+  "deterministic": true,
+  "inputs_are_fake_test_material": true,
+  "schema_version": 1,
+  "description": "Placeholder file. Real vectors will be populated alongside the raven-crypto-core reference implementation (Trust Roadmap stage 3). Inputs are fake test material — never any real production key.",
+  "vectors": [
+    {
+      "id": "pairing-root-001",
+      "comment": "placeholder; will derive K_root from zX || zPQ + transcript hash",
+      "input": {
+        "zX_hex": "TODO",
+        "zPQ_hex": "TODO",
+        "transcript_hash_hex": "TODO"
+      },
+      "expected": {
+        "K_root_hex": "TODO"
+      }
+    }
+  ]
+}

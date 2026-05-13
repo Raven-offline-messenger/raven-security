@@ -1,0 +1,41 @@
+{
+  "name": "Vault Mode (PV-RAW) encryption + Wegman-Carter MAC",
+  "spec": "ATSAM Public Overview §3.5",
+  "status": "placeholder",
+  "deterministic": true,
+  "inputs_are_fake_test_material": true,
+  "schema_version": 1,
+  "description": "Placeholder file. The first batch will include:\n - a positive vector that decrypts cleanly with the intended pad,\n - a negative vector that fails authentication after a single ciphertext bit flip,\n - a negative vector that fails authentication when the AAD is altered.",
+  "vectors": [
+    {
+      "id": "pv-raw-positive-001",
+      "comment": "placeholder; intended pad decrypts plaintext cleanly",
+      "input": {
+        "pad_id_hex": "TODO",
+        "direction": "forward",
+        "counter": 0,
+        "pad_keystream_hex": "TODO",
+        "wc_mac_key_hex": "TODO",
+        "wc_mac_mask_hex": "TODO",
+        "plaintext_hex": "TODO"
+      },
+      "expected": {
+        "ciphertext_hex": "TODO",
+        "mac_tag_hex": "TODO"
+      }
+    },
+    {
+      "id": "pv-raw-negative-bitflip-001",
+      "comment": "placeholder; single ciphertext bit flip must fail authentication",
+      "input": {
+        "tampered_ciphertext_hex": "TODO",
+        "wc_mac_key_hex": "TODO",
+        "wc_mac_mask_hex": "TODO"
+      },
+      "expected": {
+        "verifies": false,
+        "error": "authFailed"
+      }
+    }
+  ]
+}

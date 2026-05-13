@@ -1,0 +1,27 @@
+{
+  "name": "Live confirmation challenge / response MAC",
+  "spec": "ATSAM Public Overview §3.3",
+  "status": "placeholder",
+  "deterministic": true,
+  "inputs_are_fake_test_material": true,
+  "schema_version": 1,
+  "description": "Placeholder file. The first batch will include role=initiator and role=responder vectors so a reviewer can confirm the implementation rejects reflection attacks.",
+  "vectors": [
+    {
+      "id": "live-confirm-001",
+      "comment": "placeholder; will publish (K_live, role=responder, c_A, c_B, epoch, beacon_nonce, transcript_hash) -> MAC",
+      "input": {
+        "K_live_hex": "TODO",
+        "role": "responder",
+        "c_A_hex": "TODO",
+        "c_B_hex": "TODO",
+        "epoch": 0,
+        "beacon_nonce_hex": "TODO",
+        "transcript_hash_hex": "TODO"
+      },
+      "expected": {
+        "mac_hex": "TODO"
+      }
+    }
+  ]
+}
