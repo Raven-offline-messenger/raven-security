@@ -1,9 +1,58 @@
-# Raven Security
+# Raven Security · ATSAM Protocol
 
-Raven is a privacy-focused messenger designed to work online and offline.
-This repository contains the public security documentation for Raven and
-**ATSAM**, Raven's layered security architecture for private discovery,
-encrypted mesh routing, and optional Vault Mode for sensitive text.
+> **ATSAM Protocol** (Anchored Transient Stealth Authentication Mechanism)
+> is the open-design security protocol behind [Raven Messenger][raven-site].
+> It is a five-layer stack — post-quantum hybrid pairing, private peer
+> discovery, live device confirmation, encrypted routing with rotating
+> per-message tags, and optional Vault Mode (one-time-pad content protection)
+> — that applies uniformly to Raven's three communication paths: offline
+> Bluetooth mesh, bridge handoff between mesh and internet, and online
+> server-routed delivery.
+
+[raven-site]: https://raven-messager.com/atsam
+
+This repository (`raven-security`) is the **public documentation** side of
+ATSAM: the [ATSAM Public Security Overview][overview-pdf] (PDF), the
+[threat model](THREAT_MODEL.md), per-layer
+[security claims](SECURITY_CLAIMS.md), the
+[trust roadmap](TRUST_ROADMAP.md), a
+[responsible-disclosure policy](SECURITY.md), and test-vector scaffolding.
+
+[overview-pdf]: https://raven-messager.com/assets/ATSAM_Public_Security_Overview_May_2026.pdf
+
+Raven is early. We do not ask users to trust us blindly. The goal is to
+earn trust through public documentation, clear threat models, open
+cryptographic components, independent audits, and security-community
+review.
+
+## What is ATSAM, in one paragraph
+
+**ATSAM** stands for **Anchored Transient Stealth Authentication Mechanism**.
+It anchors trust to a paired-device root secret, derives transient per-message
+keys and routing tags from that root, and minimises observable identity
+metadata at every layer. Concretely, ATSAM bundles five layers:
+
+1. **Post-quantum hybrid pairing** — X25519 elliptic-curve key exchange
+   combined with **ML-KEM-768** (NIST FIPS 203). Both contributions are
+   mixed into the root secret, so the pairing is secure as long as either
+   primitive holds.
+2. **Private peer discovery** — bilateral beacon encryption so paired
+   devices recognise each other while making discovery beacons look like
+   random noise to everyone else.
+3. **Live device confirmation** — a fresh challenge-response exchange
+   confirms a peer is genuinely present, defeating replayed-beacon attacks.
+4. **Encrypted routing** — every message envelope carries a rotating
+   128-bit recipient tag derived per-message from the pair's routing key.
+   The same construction protects mesh hops, bridge handoffs, and online
+   server delivery, so a forwarder on any path sees only opaque bytes.
+5. **Vault Mode (optional)** — one-time-pad content protection for selected
+   high-sensitivity text messages. When the OTP conditions are met (random,
+   secret, long enough, never reused), it can provide information-theoretic
+   secrecy.
+
+ATSAM ships in **Raven Messenger v1.7+**. The protocol's design rationale,
+threat model, claim list, and intended limits are all documented in this
+repository.
 
 Raven is early. We do not ask users to trust us blindly. Our goal is to
 earn trust through public documentation, clear threat models, open
